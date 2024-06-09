@@ -33,9 +33,10 @@ defmodule PentoWeb.WrongLive do
     {guess, _} = Integer.parse(guess)
     IO.puts("The currently guess: #{guess}")
     IO.puts("The right answer #{@right_answer}")
+
     answer =
       case guess do
-         @right_answer -> {"That't right", 1}
+        @right_answer -> {"That't right", 1}
         _ -> {"Your guess: #{guess}. Wrong. Guess again.", -1}
       end
 
