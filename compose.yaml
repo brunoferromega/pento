@@ -1,12 +1,29 @@
 
 services:
-
-  db:
+  prod:
     image: postgres:16.3-alpine3.20
     restart: always
     environment: 
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: example
       POSTGRES_DB: pento
+    volumes:
+      - pg_prod:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+  dev:
+    image: postgres:16.3-alpine3.20
+    restart: always
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: pento_dev
+    volumes:
+      - pg_dev:/var/lib/postgresql/data
+    ports:
+      - "5433:5433"
+    
+volumes:
+  pg_prod:
+  pg_dev:
     

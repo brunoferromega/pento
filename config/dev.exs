@@ -5,7 +5,7 @@ config :pento, Pento.Repo,
   username: "postgres",
   password: "example",
   hostname: "localhost",
-  database: "pento_dev",
+  database: "pento",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
